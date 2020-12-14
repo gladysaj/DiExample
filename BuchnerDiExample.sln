@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuchnerDi", "BuchnerDiExample\BuchnerDi.csproj", "{D02BE02C-799E-448D-AAA0-518C9353C3C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuchnerDi_Tests", "BuchnerDi_Tests\BuchnerDi_Tests.csproj", "{68F92584-2FB6-4C16-A9F4-F173E1431F33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D02BE02C-799E-448D-AAA0-518C9353C3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02BE02C-799E-448D-AAA0-518C9353C3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02BE02C-799E-448D-AAA0-518C9353C3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02BE02C-799E-448D-AAA0-518C9353C3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F92584-2FB6-4C16-A9F4-F173E1431F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F92584-2FB6-4C16-A9F4-F173E1431F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F92584-2FB6-4C16-A9F4-F173E1431F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F92584-2FB6-4C16-A9F4-F173E1431F33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEA1586E-9AAC-4547-9147-433E397FA0AC}
+	EndGlobalSection
+EndGlobal
