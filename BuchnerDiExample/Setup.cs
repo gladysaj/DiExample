@@ -35,23 +35,6 @@ namespace BuchnerDi
                 _amountOfPlayers = amount;
             }
 
-            /*        try
-                    {
-                        amount = Int32.Parse(reponse);
-                    }
-
-                    catch (FormatException e)
-                    {
-                        // log(e)
-                        return AskForAmountOfPlayers();
-                    }
-                    catch (ArgumentNullException)
-                    {
-
-                    }*/
-
-
-
             return this;
         }
     }
