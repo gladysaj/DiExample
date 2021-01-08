@@ -7,7 +7,7 @@ using System.Text;
 namespace ObjectOrientedFundamentals
 {
     #region Introduction
-    /* Inheritance
+    /* What is Inheritance?
      * 
      * "Inheritance enables a new class to receive or inherit the attributes and methods of existing classes using the same implementation which is a great form of code reuse. "
      *  Barron Stone, "Programming Foundations: Object Oriented Design." https://www.linkedin.com/learning/programming-foundations-object-oriented-design-3/inheritance?u=3322.
@@ -16,18 +16,31 @@ namespace ObjectOrientedFundamentals
      *  MS Docs, "Inheritance in C# and .NET." https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance.
      */
 
-    /* Encapsulation
+
+    /* What is Encapsulation?
      * 
      * "Encapsulation means that a group of related properties, methods, and other members are treated as a single unit or object."
      * Ms Docs, "Object-Oriented programming (C#)."
      * 
-     * Typically, only the object's own methods can directly inspect or manipulate its fields. Hiding the internals of the object protects its integrity by preventing users from setting the internal data of the component into an invalid or inconsistent state. A supposed benefit of encapsulation is that it can reduce system complexity, and thus increase robustness, by allowing the developer to limit the interdependencies between software components. Wikipedia, "Encapsulation (computer programming)." https://en.wikipedia.org/wiki/Encapsulation_(computer_programming).
+     * Typically, only the object's own methods can directly inspect or manipulate its fields. Hiding the internals of the object protects its integrity by preventing users from setting the internal data of the component into an invalid or inconsistent state. A supposed benefit of encapsulation is that it can reduce system complexity, and thus increase robustness, by allowing the developer to limit the interdependencies between software components. 
+     * Wikipedia, "Encapsulation (computer programming)." https://en.wikipedia.org/wiki/Encapsulation_(computer_programming).
      * 
      * "Well, if you're the person writing these classes, why would you want to hide your own code? Why keep secrets from yourself? - It's not about being secretive. It's about reducing dependencies between different parts of the application. The change in one place won't cause a domino effect and require multiple changes elsewhere. - Then how much should you hide? - Well, different languages have different levels of support for hiding properties and methods. But the general rule is to encapsulate as much as possible."
      * Olivia Stone, "Programming Foundations: Object Oriented Design." https://www.linkedin.com/learning/programming-foundations-object-oriented-design-3/encapsulation?resume=false&u=3322.
      */
 
-    /* Expression body definition  - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator#expression-body-definition
+    /* Expresions are being used in the code below
+     * 
+     * The two methods below are functionally the same but use different syntax:
+     * 
+     * public string GetName() => name;
+     * 
+     * public string GetName()
+     * {
+     *      return name;
+     * }
+     * 
+     * Expression body definition  - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-operator#expression-body-definition
      * The => token is supported in two forms: as the lambda operator and as a separator of a member name and the member implementation in an expression body definition.
      * An expression body definition has the following general syntax: member => expression; here expression is a valid expression.The return type of expression must be implicitly convertible to the member's return type. Return type may be assumed.
      *
@@ -35,13 +48,14 @@ namespace ObjectOrientedFundamentals
      * Use the lambda declaration operator => to separate the lambda's parameter list from its body. To create a lambda expression, you specify input parameters (if any) on the left side of the lambda operator and an expression or a statement block on the other side.
     */
 
+
     /*
-       Talking Points 
+       Questions
             -   What are access modifiers in c#?
-            -   Why do we encapsulate? (Robustness, control how are code is used, distribute code, future expansion, tell others how to use our code.)
-            -   What are Getters and Setters
+            -   Why do we encapsulate?
+            -   What are getters and setters
             -   Simple Objects (Kiss) - We often create objects that kinda like "types" and purpose is only to store data.
-            -   What is inheritance? (More about writing dry code--we want the specific methods
+            -   What is inheritance and why is it important?
     */
 
     #endregion
@@ -62,7 +76,11 @@ namespace ObjectOrientedFundamentals
 
         // Getters and Setters
         public string GetName() => name;
+        public string GetPhone() => phone;
+        public string GetAddress() => address;
         public void SetName(string updateName) => name = updateName;
+        public void SetPhone(string updatePhone) => name = updatePhone;
+        public void SetAddress(string updateAddress) => name = updateAddress;
 
         // NOTE: Add Virtual
         public void Update(string updateName, string updatePhone, string updateAddress)
@@ -76,10 +94,28 @@ namespace ObjectOrientedFundamentals
     #region SimpleObjects
     public class Person2
     {
+        public Guid Id { get; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
     }
+
+    public class People
+    {
+        private readonly List<Person2> persons = new List<Person2> { };
+        // NOTE: Change how people are added and validate
+        public void Add(Person2 person) => persons.Add(person);
+        // NOTE: Key difference between these two.  Discuss removing settesr?
+        public Person2 GetPerson(Guid id) => persons.Find(p => p.Id == id);
+        public string GetPhone(Guid id) => persons.Find(p => p.Id == id).Phone;
+        //Why is this here?
+        public void CallPerson(Guid id)
+        {
+            //NOT IMPLMENTED
+        }
+    }
+
+
     #endregion
 
     #endregion
